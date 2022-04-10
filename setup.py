@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = 'SW_Algorithm',
+    name = 'SWAlgorithm',
     version = '0.1.4',
     keywords='SW',
     license = 'MIT License',
