@@ -1,7 +1,7 @@
 #!/usr/bin/python
-__author__ = "FirstName LastName"
-__email__ = "first.last@yale.edu"
-__copyright__ = "Copyright 2021"
+__author__ = "Dingyao Zhang"
+__email__ = "dingyao.zhang@yale.edu"
+__copyright__ = "Copyright 2022"
 __license__ = "GPL"
 __version__ = "1.0.0"
 
