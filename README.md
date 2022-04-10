@@ -1,1 +1,1 @@
-# SW_Algorithm
+# SWAlgorithm
