@@ -99,14 +99,16 @@ def runSW(inputFile, scoreFile, openGap, extGap):
     
     #display the score matrix and alignment result
     show_score_matrix = pd.DataFrame(score_matrix)
-    show_score_matrix.index    = np.append('sequence1',list(map(str, seq1)))
-    show_score_matrix.columns  = np.append('sequence2',list(map(str, seq2)))
+    show_score_matrix.index    = np.append('',list(map(str, seq1)))
+    show_score_matrix.columns  = np.append('',list(map(str, seq2)))
     show_score_matrix = show_score_matrix.applymap(lambda x: str(int(x)) if abs(x - int(x)) < 1e-6 else str(round(x,2)))
-    finalmax = np.max(score_matrix)
-    print(show_score_matrix.to_csv(sep = '\t'))
-    print("----------------------\n|Best Local Alignment|\n----------------------\nAlignment Results:")
-    print('Alignment Score:', finalmax)
-    
+    show_score_matrix = show_score_matrix.T
+    finalmax = np.max(score_matrix).astype("int64")
+    print(show_score_matrix.to_csv(sep = '\t'),end='')
+    print("----------------------\n|Best Local Alignment|\n----------------------")
+    outputtemp1 = 'Alignment Score:' + str(finalmax)
+    print(outputtemp1)
+    print("Alignment Results:")
 
     #traceback process using a traceback function
     
@@ -156,22 +158,15 @@ def tracemat(score_matrix, frommat, i, j, seq1, seq2, line1, line2, line3):
         line2 = tiniline2+' '+line2
         line3 = tiniline3+'('+line3
         print(line1+'\n'+line2+'\n'+line3)
-        print("\n-----------------------------------------------------")
+        #print("\n-----------------------------------------------------")
     else:
 
         indexlist = frommat.iloc[i,j]
 
         positionlistnum = len(indexlist)
-        #print('aaaaaaaaaaaaaaaaaaa')
-        #print(positionlistnum)
-        #print(i)
-        #print(j)
-        #print(indexlist)
-        #print(line1)
-        #print(line2)
-        #print(line3)
-        #print('bbbbbbbbbbbbbbbbbbb')
+
         #for placei in range(positionlistnum):
+            #place = indexlist[placei]
         if 1==1:
             placei = 0
             place = indexlist[placei]
